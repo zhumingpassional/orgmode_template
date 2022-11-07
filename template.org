@@ -1,0 +1,81 @@
+*  模板
+
+
+
+#+CAPTION: 表格的标题
+| Name  |   id | Age |  XXX |
+|-------+------+-----+------|
+| Peter | 1234 |  50 | 1284 |
+| Sue   | 4321 |  54 | 4375 |
+|       |      |     |    0 |
+|-------+------+-----+------|
+|       |      |     |      |
+#+TBLFM: $4=$2+$3
+
+$a^2 + b^2 = c^2$,  a^2 + b^2 = c^2, a_1, b_2, c^2, d^3
+
+\begin{equation}
+e = m c^2, ~\text{using \{eqution\}}
+\end{equation}
+e = m c^2, ~\text{not using {eqution}}
+
+\begin{eqnarray}
+&& x = 0  \label{eqn:x} \\
+&& y = 1  \label{eqn:y} \\
+&& z = 3 \nonumber
+\end{eqnarray}
+\eqref{eqn:x} is correct. \eqref{eqn:y} is wrong, {eqn:y} is wrong.
+
+#+begin_comment
+sssssss, this is comment
+#+end_comment
+
+
+
+#+CAPTION: 图片的标题
+[[file:fig/1.jpg]]
+
+# <sTAB
+
+#+begin_src c++
+void f(){
+cout<<"hello"<<endl;
+}
+#+end_src
+
+
+#+begin_src python
+ def Demo():
+    print("org-mode")
+#+end_src
+
+
+
+#+begin_src emacs-lisp
+(defun tables-recalc (backend)
+    (org-table-recalculate-buffer-tables))
+(add-hook 'org-export-before-processing-hook #'tables-recalc)
+#+end_src
+
+
+
+
+# <lTAB
+#+begin_export latex
+\section{Intro}
+The eqns are:
+
+\begin{eqnarray}
+&& a + b = 3  \label{eqn:1} \\
+&& c + d = 5  \label{eqn:2} \\
+\end{eqnarray}
+Another eqns are:
+\begin{eqnarray}
+&& g = 8 \\
+&& h = 9 \\
+\end{eqnarray}
+
+\eqref{eqn:1} is correct.
+
+#+end_export
+
